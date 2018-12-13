@@ -22,12 +22,10 @@ const router = new Router({
     },
     {
       path: '/HomePage',
-      name: 'HomePage',
       component: HomePage,
       children: [
       	{
 	        path: 'Home',
-	        name: 'Product',
 	        component: ProductList,
 	        meta: {
 		      	title:"home"

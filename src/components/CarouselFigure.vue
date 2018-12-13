@@ -1,7 +1,7 @@
 <template>
 	<div class="carousel">
 		<div class="cFigure">
-			
+			<SliderShow :slides="slides"></SliderShow>
 		</div>
 		
 		<div class="hotFunction">
@@ -34,6 +34,8 @@
 </template>
 
 <script>
+	import SliderShow from './SliderShow'
+	
 	export default {
 		created: function() {
 			this.$http.post('http://10.0.158.25:9001/MSreport/permission?flag=A_P_Q&permissionType=D',{"peopleId": "86000807"})
@@ -43,9 +45,20 @@
 				console.log(err)
 			})
 		},
+		components: {
+			SliderShow
+		},
 		data() {
 			return {
-				mag: 'CarouseFigure.vue'
+				mag: 'CarouseFigure.vue',
+				invTime: 2000,
+				slides:[
+					{
+						src: require('../assets/loginBg.gif'),
+						title: 'hahahahaha',
+						href: '#'
+					}
+				]
 			}
 		}
 	}
